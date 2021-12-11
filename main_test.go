@@ -42,8 +42,8 @@ func clearTable() {
 const tableCreationQuery = `CREATE TABLE IF NOT EXISTS todos
 (
     id SERIAL,
-    name TEXT NOT NULL,
-    CONSTRAINT products_pkey PRIMARY KEY (id)
+    Name TEXT NOT NULL,
+    CONSTRAINT todos_pkey PRIMARY KEY (id)
 )`
 
 func TestEmptyTable(t *testing.T) {
@@ -69,20 +69,6 @@ func executeRequest(req *http.Request) *httptest.ResponseRecorder {
 func checkResponseCode(t *testing.T, expected, actual int) {
 	if expected != actual {
 		t.Errorf("Expected response code %d. Got %d\n", expected, actual)
-	}
-}
-func TestGetNonExistentTodo(t *testing.T) {
-	clearTable()
-
-	req, _ := http.NewRequest("GET", "/item/11", nil)
-	response := executeRequest(req)
-
-	checkResponseCode(t, http.StatusNotFound, response.Code)
-
-	var m map[string]string
-	json.Unmarshal(response.Body.Bytes(), &m)
-	if m["error"] != "Todo not found" {
-		t.Errorf("Expected the 'error' key of the response to be set to 'Todo not found'. Got '%s'", m["error"])
 	}
 }
 
@@ -111,11 +97,11 @@ func TestCreateTodo(t *testing.T) {
 	}
 }
 
-func TestGetTodo(t *testing.T) {
+func TestGetTodos(t *testing.T) {
 	clearTable()
 	addTodo(1)
 
-	req, _ := http.NewRequest("GET", "/todo/1", nil)
+	req, _ := http.NewRequest("GET", "/todo", nil)
 	response := executeRequest(req)
 
 	checkResponseCode(t, http.StatusOK, response.Code)
