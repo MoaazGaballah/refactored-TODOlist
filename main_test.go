@@ -72,6 +72,20 @@ func checkResponseCode(t *testing.T, expected, actual int) {
 	}
 }
 
+func TestGetNonExistentEndPoint(t *testing.T) {
+
+	req, _ := http.NewRequest("GET", "/todol", nil)
+	response := executeRequest(req)
+
+	checkResponseCode(t, http.StatusNotFound, response.Code)
+
+	var m map[string]string
+	json.Unmarshal(response.Body.Bytes(), &m)
+	if m["error"] == "End point not found" {
+		t.Errorf("Expected the 'error' key of the response to be set to 'Todo not found'. Got '%s'", m["error"])
+	}
+}
+
 func TestCreateTodo(t *testing.T) {
 
 	clearTable()
