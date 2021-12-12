@@ -1,1 +1,31 @@
 # refactored-TODOlist
+
+Bu Proje, aşağdaki maddeleri göz önünde bulundurarak, [TODOlist projesinin backend tarafı](https://github.com/MoaazGaballah/TODOlist/#/), tekrar geliştirilmiştir.
+
+* Kod kalitesi geliştirmek.
+* Klasör düzeni  düzeltmek.
+* Metod isimleri, fonkisyona göre yazmak.
+* Acceptance testleri eklemek.
+
+
+Bu proje **Go** programlama dili ile, **acceptance testler** yazılıp, **Pipeline Automation** geliştirilmiştir.
+
+Ekteki resimde görüldüğü gibi, testler hem devlopment ortamında, hem de pipeline içinde de, geçmiştir. 
+
+* Development ortamı
+![alt text](https://github.com/MoaazGaballah/TODOlist/blob/main/backend/Tests%20Development.png)
+
+* Pipeline ortamı
+![alt text](https://github.com/MoaazGaballah/TODOlist/blob/main/backend/Tests%20Pipeline.png)
+
+## Pipeline Configration aşağıdaki gibidir.
+![alt text](https://github.com/MoaazGaballah/TODOlist/blob/main/backend/Configration.png)
+
+* Download Modules
+![alt text](https://github.com/MoaazGaballah/TODOlist/blob/main/backend/Download%20Modules.png)
+
+* Build
+![alt text](https://github.com/MoaazGaballah/TODOlist/blob/main/backend/Build.png)
+
+* Test
+![alt text](https://github.com/MoaazGaballah/TODOlist/blob/main/backend/test.png)
