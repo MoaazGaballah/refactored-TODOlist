@@ -20,6 +20,7 @@ blocks:
           value: 'on'
         - name: GOFLAGS
           value: '-mod=vendor'
+    dependencies: []
   - name: Tests
     task:
       env_vars:
@@ -38,6 +39,8 @@ blocks:
         - name: go test
           commands:
             - go test -v ./...
+    dependencies:
+      - Build
   - name: Build
     task:
       env_vars:
@@ -52,9 +55,10 @@ blocks:
           - checkout
           - 'cache restore '
           - go mod vendor
-          - source env-sample
       jobs:
         - name: go build
           commands:
             - go build -v -o go-mux.bin
             - artifact push project --force go-mux.bin
+    dependencies:
+      - Install
