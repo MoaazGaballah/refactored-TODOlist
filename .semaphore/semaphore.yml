@@ -10,7 +10,7 @@ blocks:
       jobs:
         - name: go test
           commands:
-            - sem-service start postgres
+            - sem-service start postgres --username=todouser --password=1 --db=todos
             - sem-version go 1.16
             - export GO111MODULE=on
             - export GOPATH=~/go
