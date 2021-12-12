@@ -13,10 +13,10 @@ Bu proje **Go** programlama dili ile, **acceptance testler** yazılıp, **Pipeli
 Ekteki resimde görüldüğü gibi, testler hem devlopment ortamında, hem de pipeline içinde de, geçmiştir. 
 
 * Development ortamı
-![alt text](https://github.com/MoaazGaballah/TODOlist/blob/main/backend/Tests%20Development.png)
+![alt text](https://github.com/MoaazGaballah/TODOlist/blob/main/backend/tests-development.png)
 
 * Pipeline ortamı
-![alt text](https://github.com/MoaazGaballah/TODOlist/blob/main/backend/Tests%20Pipeline.png)
+![alt text](https://github.com/MoaazGaballah/TODOlist/blob/main/backend/tests-pipeline.png)
 
 ## Pipeline Configration aşağıdaki gibidir.
 ![alt text](https://github.com/MoaazGaballah/TODOlist/blob/main/backend/Configration.png)
