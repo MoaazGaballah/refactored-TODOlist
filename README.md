@@ -18,7 +18,7 @@ Ekteki resimde görüldüğü gibi, testler hem devlopment ortamında, hem de pi
 * Pipeline ortamı
 ![alt text](https://github.com/MoaazGaballah/TODOlist/blob/main/backend/tests-pipeline.png)
 
-## Pipeline Configration aşağıdaki gibidir.
+## Pipeline Configration
 ![alt text](https://github.com/MoaazGaballah/TODOlist/blob/main/backend/Configration.png)
 
 * Download Modules
